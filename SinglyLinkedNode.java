@@ -22,7 +22,15 @@ public class SinglyLinkedNode <T> {
 	
 	public SinglyLinkedNode<T> getNext(){
 		
-		return this.next;
+		if(this.next == null){
+			
+			return null;
+			
+		}else{
+			
+			return this.next;
+		}
+		
 	}
 	
 	public String toString(){

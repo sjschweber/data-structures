@@ -9,6 +9,21 @@ public class SinglyLinkedList <T>{
 		
 	}
 	
+	public SinglyLinkedList(SinglyLinkedNode<T> head){
+		
+		this.head = head;
+		this.size++;
+		
+		//check if the head is pointing to another node.
+		//If it is then increase size.
+		SinglyLinkedNode<T> curr = this.head;
+		while(curr.getNext() != null){
+			curr = curr.getNext();
+			this.size++;
+		}
+		
+	}
+	
 	public SinglyLinkedNode<T> getHead(){
 		
 		return this.head;
@@ -62,5 +77,28 @@ public class SinglyLinkedList <T>{
 		
 		return this.size;
 		
+	}
+	
+	public String toString(){
+		
+		String retString = "";
+		SinglyLinkedNode<T> curr = this.head;
+		
+		while(curr != null){
+			
+			if(curr == this.head){
+				
+				retString += "" + curr.getData();
+				
+			}else{
+				
+				retString += ", " + curr.getData();
+				
+			}
+			
+			curr = curr.getNext();
+		}
+		
+		return retString;
 	}
 }
